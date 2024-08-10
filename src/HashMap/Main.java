@@ -1,9 +1,6 @@
 package HashMap;
 
-import java.util.Map;
-import java.util.HashMap;
-import java.util.Scanner;
-import java.util.Set;
+import java.util.*;
 
 public class Main {
 
@@ -32,7 +29,7 @@ public class Main {
         capitals.put("Südkorea", "Seoul");
         capitals.put("Grönland", "Nuuk");
 
-        while (true) {
+        /*while (true) {
             Set<String> keySet2 = capitals.keySet();
             for (String string : keySet2) {
                 System.out.println("Was ist die Hauptstadt von: " + string);
@@ -45,6 +42,23 @@ public class Main {
                 }
             }
             break;
+        }*/
+
+        List<String> countries = new ArrayList<>();
+        countries.addAll(capitals.keySet());
+        Random random = new Random();
+        Scanner scan = new Scanner(System.in);
+
+        while (true) {
+            int index = random.nextInt(countries.size());
+            String country = countries.get(index);
+            System.out.println("Was ist die Hauptstadt von: " + country);
+            if (scan.next().equals(capitals.get(country))) {
+                System.out.println("Die Antwort ist richtig!");
+            } else {
+                System.out.println("Die Antwort ist falsch!");
+                System.out.println("Die richtig Antwort wäre: " + capitals.get(country));
+            }
         }
     }
 }
