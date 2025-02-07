@@ -3,6 +3,6 @@ package Lambda;
 @FunctionalInterface
 public interface Lebewesen {
 
-    void macheEtwas();
+    String macheEtwas(String v, String n);
 
 }
